@@ -15,6 +15,9 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
+        // 既存のデータを削除
+        Admin::truncate();
+
         Admin::create([
             'name' => '管理者',
             'email' => 'admin@example.com',
