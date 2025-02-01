@@ -15,15 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = new User();
-        $user->name = "太郎";
-        $user->kana = "タロウ";
-        $user->email = 'tarou@example.com';
-        $user->email_verified_at = Carbon::now();
-        $user->password = Hash::make('password');
-        $user->postal_code = "0000000";
-        $user->address = "東京都";
-        $user->phone_number = "000-0000-0000";
-        $user->save();
+        User::factory()->count(100)->create();
     }
 }

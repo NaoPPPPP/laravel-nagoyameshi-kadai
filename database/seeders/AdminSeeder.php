@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Admin;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
@@ -14,9 +15,11 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = new Admin();
-        $admin->email = 'admin@example.com';
-        $admin->password = Hash::make('nagoyameshi');
-        $admin->save();
+        Admin::create([
+            'name' => '管理者',
+            'email' => 'admin@example.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
     }
 }
