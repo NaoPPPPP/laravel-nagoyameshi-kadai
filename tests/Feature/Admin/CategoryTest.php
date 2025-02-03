@@ -45,7 +45,6 @@ class CategoryTest extends TestCase
         $response->assertStatus(200);
     }
 
-    
 
     // 未ログインのユーザーはカテゴリを登録できない
     public function test_guest_cannot_access_admin_categories_store()
@@ -93,7 +92,6 @@ class CategoryTest extends TestCase
         $response->assertRedirect(route('admin.categories.index'));
     }
 
-    
 
     // 未ログインのユーザーはカテゴリを更新できない
     public function test_guest_cannot_access_admin_categories_update()
@@ -147,6 +145,7 @@ class CategoryTest extends TestCase
         $response->assertRedirect(route('admin.categories.index'));
     }
 
+    
     // 未ログインのユーザーはカテゴリを削除できない
     public function test_guest_cannot_access_admin_categories_destroy()
     {

@@ -44,6 +44,7 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
+    
     // 未ログインのユーザーは管理者側の会員詳細ページにアクセスできない
     public function test_guest_cannot_access_admin_users_show()
     {

@@ -47,6 +47,7 @@ class RestaurantTest extends TestCase
         $response->assertStatus(200);
     }
 
+
     // 未ログインのユーザーは管理者側の店舗詳細ページにアクセスできない
     public function test_guest_cannot_access_admin_restaurants_show()
     {
@@ -83,6 +84,7 @@ class RestaurantTest extends TestCase
 
         $response->assertStatus(200);
     }
+
 
     // 未ログインのユーザーは管理者側の店舗登録ページにアクセスできない
     public function test_guest_cannot_access_admin_restaurants_create()
@@ -242,6 +244,7 @@ class RestaurantTest extends TestCase
         $response->assertRedirect(route('admin.restaurants.index'));
     }
 
+
     // 未ログインのユーザーは管理者側の店舗編集ページにアクセスできない
     public function test_guest_cannot_access_admin_restaurants_edit()
     {
@@ -278,6 +281,7 @@ class RestaurantTest extends TestCase
 
         $response->assertStatus(200);
     }
+
 
     // 未ログインのユーザーは店舗を更新できない
     public function test_guest_cannot_access_admin_restaurants_update()
@@ -411,6 +415,7 @@ class RestaurantTest extends TestCase
         $response->assertRedirect(route('admin.restaurants.show', $old_restaurant));
     }
 
+    
     // 未ログインのユーザーは店舗を削除できない
     public function test_guest_cannot_access_admin_restaurants_destroy()
     {
