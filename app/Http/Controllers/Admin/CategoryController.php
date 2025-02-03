@@ -15,8 +15,7 @@ class CategoryController extends Controller
         $query = Category::query();
 
         if (!empty($keyword)) {
-            $query->where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('kana', 'LIKE', "%{$keyword}%");
+            $query->where('name', 'LIKE', "%{$keyword}%");                
         }
 
         $categories = $query->paginate(15);
